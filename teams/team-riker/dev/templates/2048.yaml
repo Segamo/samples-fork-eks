@@ -30,11 +30,11 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 1000m
-              memory: 2000Mi
+              cpu: 500m
+              memory: 512Mi
             requests:
-              cpu: 1000m
-              memory: 2000Mi
+              cpu: 250m
+              memory: 50Mi
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -45,7 +45,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: team-riker-fargate
+  namespace: team-riker
   name: service-2048
   labels:
     app: "2048"
@@ -62,7 +62,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: team-riker-fargate
+  namespace: team-riker
   name: ingress-2048
   labels:
     app: "2048"
