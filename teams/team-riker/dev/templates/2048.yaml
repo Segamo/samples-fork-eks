@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: app-2048
-  replicas: 10
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -32,11 +32,11 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 2000m
-              memory: 4096Mi
+              cpu: 500m #2048m
+              memory: 512Mi #4096Mi
             requests:
-              cpu: 1000m
-              memory: 2500Mi
+              cpu: 250m #1000m
+              memory: 50Mi #2500Mi
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
