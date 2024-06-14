@@ -5,7 +5,7 @@ metadata:
   namespace: team-riker
   labels:
     app: "2048"
-    fargate: yes
+    fargate: "yes"
     {{- toYaml .Values.labels | nindent 4 }}
 spec:
   selector:
