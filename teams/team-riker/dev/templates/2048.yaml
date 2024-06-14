@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-2048
+  namespace: team-riker-fargate
   labels:
     app: "2048"
     {{- toYaml .Values.labels | nindent 4 }}
@@ -45,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: team-riker
+  namespace: team-riker-fargate
   name: service-2048
   labels:
     app: "2048"
@@ -62,7 +63,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: team-riker
+  namespace: team-riker-fargate
   name: ingress-2048
   labels:
     app: "2048"
