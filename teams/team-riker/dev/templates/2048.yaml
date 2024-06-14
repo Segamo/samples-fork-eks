@@ -4,9 +4,7 @@ metadata:
   name: deployment-2048
   namespace: team-riker
   labels:
-    app: "2048"
-    fargate: yes
-    {{- toYaml .Values.labels | nindent 4 }}
+    fargate: "yes"
 spec:
   selector:
     matchLabels:
