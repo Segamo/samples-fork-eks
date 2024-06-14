@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: app-2048
-  replicas: 3
+  replicas: 3 #10
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -20,7 +20,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: app-2048
-        #fargate: "yes"
+        fargate: "yes"
     spec:
       automountServiceAccountToken: false
       containers:
