@@ -32,11 +32,11 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 500m
-              memory: 512Mi
+              cpu: 2000m
+              memory: 4096Mi
             requests:
-              cpu: 250m
-              memory: 50Mi
+              cpu: 1000m
+              memory: 2500Mi
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
