@@ -20,7 +20,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: app-2048
-        fargate: "yes"
     spec:
       automountServiceAccountToken: false
       containers:
