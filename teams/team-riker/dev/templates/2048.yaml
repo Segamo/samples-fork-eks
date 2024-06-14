@@ -4,7 +4,8 @@ metadata:
   name: deployment-2048
   namespace: team-riker
   labels:
-    fargate: "yes"
+    app: "2048"
+    {{- toYaml .Values.labels | nindent 4 }}
 spec:
   selector:
     matchLabels:
@@ -19,6 +20,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: app-2048
+        fargate: yes
     spec:
       automountServiceAccountToken: false
       containers:
